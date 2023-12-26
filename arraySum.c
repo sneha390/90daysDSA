@@ -1,19 +1,34 @@
 #include <stdio.h>
 
 int main(){
-    int arr[2];
+    int n;
+    scanf("%d",&n);
+    int arr[n];
     
-    for(int i = 0; i < 2; i++){
+    for(int i = 0; i < n; i++){
         scanf("%d",&arr[i]);
     }
     int target;
     scanf("%d",&target);
-    for(int i = 0; i<2;i++){
-        for(int j = i+1;j<2;j++){
-            if(arr[i]+arr[j]== target ){
-                printf("%d%d Result",i,j);
-            }
+
+    int pointer1 = 0;
+    int pointer2 = n-1;
+
+    while(pointer1 < pointer2){
+        if(arr[pointer1] + arr[pointer2] == target){
+            printf("%d %d",arr[pointer1],arr[pointer2]);
+            // break;
+        }
+
+        else if(arr[pointer1] + arr[pointer2] < target){
+            pointer1++;
+        }
+
+        else if(arr[pointer1] + arr[pointer2] > target){
+            pointer2--;
         }
     }
+
+    
 }
 

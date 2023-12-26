@@ -1,4 +1,4 @@
-// Java program to count occurrences 
+//  Java program to count occurrences 
 
 class Main
 {
