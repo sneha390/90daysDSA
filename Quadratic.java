@@ -14,8 +14,8 @@ public class Quadratic {
         System.out.println(discriminant);
 
 
-        double root1 = ((-1*b)+Math.sqrt(discriminant))/2* a;
-        double root2 = ((-1*b)-Math.sqrt(discriminant))/2* a;
+        double quadratic_root1 = ((-1*b)+Math.sqrt(discriminant))/2* a;
+        double quadratic_root2 = ((-1*b)-Math.sqrt(discriminant))/2* a;
 
         System.out.println("Root1 :"+root1);
         System.out.println("Root2 :"+root2);
