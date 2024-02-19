@@ -9,16 +9,18 @@ vector<string> split(const string &);
 int diagonalDifference(vector<vector<int>> arr) {
     int sum1 = 0;
     int sum2 = 0;
-    for(int i = 0; i<arr.size(); i++){
-        for(int j = 0; j<arr[0].size(); j++){
+    int row = arr.size();
+    int col = arr[0].size();
+
+    for(int i = 0; i < row ; i++){
+        for(int j = 0; j < col ; j++){
             if(i == j){
                 sum1 = sum1 + arr[i][j];
             }
-            if(j == arr.size() - i - 1){
+            if(j == row - i -1){
                 sum2 = sum2 + arr[i][j];
             }
         }
-
     }
     int result = abs(sum1 - sum2);
     
@@ -54,7 +56,8 @@ int main()
 
     int result = diagonalDifference(arr);
 
-    fout << result << "\n";
+    // fout << result << "\n";
+    cout << result << "\n";
 
     fout.close();
 
