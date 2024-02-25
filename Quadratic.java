@@ -1,4 +1,4 @@
-
+package pattern;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -17,8 +17,8 @@ public class Quadratic {
         double quadratic_root1 = ((-1*b)+Math.sqrt(discriminant))/2* a;
         double quadratic_root2 = ((-1*b)-Math.sqrt(discriminant))/2* a;
 
-        System.out.println("Root1 :"+root1);
-        System.out.println("Root2 :"+root2);
+        System.out.println("Root1 :"+ quadratic_root1);
+        System.out.println("Root2 :"+quadratic_root2);
 
     }
     

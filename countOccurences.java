@@ -1,5 +1,5 @@
 //  Java program to count occurrences 
-
+package pattern;
 class Main
 {
     static int countOccurrences(int arr[], int n, int x)
