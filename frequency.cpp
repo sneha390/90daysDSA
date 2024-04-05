@@ -12,6 +12,7 @@ int main(){
         brr[x] = brr[x] + 1;
         i++;
     }
+    
     // all frequency is calculated
 
     int query[3] = { 1, 3 ,4};
