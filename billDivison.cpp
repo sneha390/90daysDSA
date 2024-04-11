@@ -1,33 +1,42 @@
+// Two friends Anna and Brian, are deciding how to split the bill at a dinner. 
+// Each will only pay for the items they consume. 
+// Brian gets the check and calculates Anna's portion. 
+// You must determine if his calculation is correct.
+
+#include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
 
 
-int main()
-{
-   long long int sum=0;
-    
-    long long int n,k,i,b,act;
-    cin>>n>>k;
+void bonAppetit(vector<int> bill, int k, int b) {
+    int sum = 0;
+    for(int i = 0; i < bill.size() ; i++){
+        sum += bill[i];
+    }
+
+    int anna_cost = sum - bill[k];
+    int total_cost = anna_cost / 2;
+
+    if(b == total_cost){
+        cout << "Bon - appetit";
+    }else{
+        b = b - total_cost ;
+        cout << b;
+    }
+}
+
+int main(){
+
+    long long int n,k,b;
+    cin>>n;
+    cin>>k;
+    cin>>b;
   
-    long long int bill[n];
-    for(i=0;i<n;i++)
+    vector<int>bill(n);
+    for(int i=0;i<n;i++)
     {
         cin>>bill[i];
-        sum=sum+bill[i];
     }
-    cin>>b;
-    act=sum-bill[k];
-    act=act/2;
-    
-if(b==act)
-{
-    cout<<"Bon Appetit";
-}
-else{
-    cout<<b-act;
-}
-    
-    return 0;
-}
 
-
+    bonAppetit(bill,k,b);
+}
