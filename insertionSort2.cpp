@@ -14,11 +14,11 @@ void insertionSort(int arr[] , int n){
                 break;
             }
         }
+        for(int k = 0; k < n; k++){
+            cout << arr[k]<< " ";
+        }
+        cout << endl;
 
-    }
-
-    for(int i = 0 ; i < n ; i++){
-        cout << arr[i]<< " ";
     }
 }
 
