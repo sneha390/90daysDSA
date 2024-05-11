@@ -2,27 +2,40 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void closetNumber(vector<int> arr){
+vector<int>closetNumber(vector<int> arr){
     int n = arr.size();
-    for(int i = 1 ; i < n ; i++){
-        for(int j = i -1 ; j >= 0; j--){
-            if(arr[j] > arr[j+1]){
-                int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
-        }
+    unordered_map<int, vector<int>> mp;
+    sort(arr.begin() , arr.end());
+    for(int i = 0 ; i< n-1; i++){
+        int diff = arr[i+1] - arr[i];
+        mp[diff].push_back(arr[i+1]);
+        mp[diff].push_back(arr[i]);   
     }
-
-    int minDiff = arr[1] - arr[0];
     
-    for(int i = 1 ; i <= n-1;i++){
-        minDiff = min(minDiff , arr[i+1] - arr[i]);
+    int mini = 1e9;
+    for(auto i:mp){
+        mini = min(mini, i.first);
     }
-    cout<< minDiff << endl;
+    
+    vector<int> ans = mp[mini];
+    sort(ans.begin() , ans.end());
+    return ans;
 }
 
 int main(){
-    vector<int>arr = {5 , 4, 3, 2};
-    closetNumber(arr);
+    
+    vector<int>arr;
+    int num;
+    cin >> num;
+    int input;
+    for(int i = 0; i < num ; i++){
+        cin >> input;
+        arr.push_back(input);
+    }
+    vector<int> result = closetNumber(arr);
+    for(int i = 0; i < result.size() ; i++){
+        cout << result[i] << " ";
+    }
+
+
 }
