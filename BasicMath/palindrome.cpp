@@ -11,7 +11,7 @@ bool isPalindrome(int x){
         int reversed = reversed * 10 + x % 10;
         x = x /10;
     }
-    return reversed == x;
+    return reversed == x || x = reversed /10;
 }
 
 int main(){
