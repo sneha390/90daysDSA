@@ -11,6 +11,15 @@ class LinkedList{
         this -> data = data;
         this -> next = NULL;
     }
+
+    ~LinkedList(){
+        int value = this -> data;
+        if(this-> next != NULL){
+            delete next;
+            this -> next = NULL;
+        }
+        cout << "Memory is free for node with data "<< value << endl;
+    }
 };
 
     void insertAtHead(LinkedList* &head ,int d){
@@ -48,6 +57,28 @@ class LinkedList{
         cout << endl;
     }
 
+    void deleteAt(int position , LinkedList* &head){
+        if(position == 1){
+            LinkedList* temp = head;
+            head = head -> next;
+            temp -> next = NULL;
+            delete temp;
+        }else{
+            LinkedList* current = head;
+            LinkedList* previous = NULL;
+            int cnt = 1;
+            while(cnt <= position){
+                previous = current;
+                current = current -> next;
+                cnt++;
+            }
+
+            previous-> next = current->next;
+            current-> next = NULL;
+            delete current;
+        }
+    }
+
 
 
 int main(){
@@ -63,6 +94,14 @@ int main(){
     insertAtHead(head,12);
 
     insertAtMiddle(head , 2,13);
+
+    display(head);
+
+    deleteAt(2 , head);
+
+    display(head);
+
+    deleteAt(1 , head);
 
     display(head);
 }
