@@ -29,3 +29,6 @@ int main(){
         cout << query << " = " << count << endl;
     }
 }
+
+// Time Complexity = O(n + q)
+// Space complexity = numbe rof elemments in hash and array
