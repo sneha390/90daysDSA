@@ -1,3 +1,11 @@
+// Given an integer array hours representing times in hours, return an integer denoting the number of pairs i, j where i < j and hours[i] + hours[j] forms a complete day.
+
+// A complete day is defined as a time duration that is an exact multiple of 24 hours.
+// Constraints:
+
+// 1 <= hours.length <= 5 * 105
+// 1 <= hours[i] <= 109
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
