@@ -1,3 +1,9 @@
+// Problem: 
+// Check if the following given array contains duplicate elements within k distance from each other.
+// Brute-Force Approach
+// Time Complexty : O(n *k)
+//  Space Complexity: O(1)
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
