@@ -1,3 +1,7 @@
+//  Minimum operations to make all elements equal in an array.
+// Time Complexity : O(n^2)
+// Space Complexity : O(!)
+
 #include <iostream>
 #include <bits/stdc++.h>
 using namespace std;
