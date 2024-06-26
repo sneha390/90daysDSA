@@ -67,7 +67,7 @@ class LinkedList{
             LinkedList* current = head;
             LinkedList* previous = NULL;
             int cnt = 1;
-            while(cnt <= position){
+            while(cnt < position){
                 previous = current;
                 current = current -> next;
                 cnt++;
