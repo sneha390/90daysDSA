@@ -7,13 +7,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class treeNode{
+class TreeNode{
     public:
     int data;
-    treeNode *left;
-    treeNode *right;
+    TreeNode *left;
+    TreeNode *right;
 
-    treeNode(int data){
+    TreeNode(int data){
         this->data = data;
         this->left = nullptr;
         this->right = nullptr;
@@ -22,58 +22,36 @@ class treeNode{
 
 class Tree{
     public:
-    treeNode *root;
+    TreeNode *root;
     Tree(){
         this->root = nullptr;
     }
 
-    int insertion(int data){
-        if(root == nullptr){
-            root = new treeNode(data);
-            return 1;
-        }
-
-        treeNode *temp = root;
-        while(temp != nullptr){
-            if(data > temp->data){
-                if(temp -> right == nullptr){
-                    temp->right = new treeNode(data);
-                    return 1;
-                }else{
-                    temp = temp -> right;
-                }
-            }
-            else if(data < temp->data){
-                if(temp -> left == nullptr){
-                    temp->left = new treeNode(data);
-                    return 1;
-                }else{
-                    temp = temp -> left;
-                }
-            }
-            else{
-                return 0;
-            }
-        }
-        return 0;
+    void createSymmetricTree() {
+        root = new TreeNode(1);
+        root->left = new TreeNode(2);
+        root->right = new TreeNode(2);
+        root->left->left = new TreeNode(3);
+        root->left->right = new TreeNode(4);
+        root->right->left = new TreeNode(4);
+        root->right->right = new TreeNode(3);
     }
-
-    
 };
 
 
-bool helper(treeNode *p , treeNode *q){
+
+bool helper(TreeNode *p , TreeNode *q){
     if(!p && !q){
         return true;
     }
     if(!p || !q){
         return false;
     }
-    return p->data == q ->data && helper(p->left,q->right) && helper(p->right , q->left);
+    return (p->data == q ->data) && helper(p->left,q->right) && helper(p->right , q->left);
 
 }
 
-bool isSymmetricTree(treeNode* root) {
+bool isSymmetricTree(TreeNode* root) {
     if(!root){
         return true;
     }
@@ -85,18 +63,12 @@ bool isSymmetricTree(treeNode* root) {
 int main(){
     Tree t;
 
-    t.insertion(1);
-    t.insertion(2);
-    t.insertion(2);
-    t.insertion(3);
-    t.insertion(4);
-    t.insertion(4);
-    t.insertion(3);
+    t.createSymmetricTree();
 
     if (isSymmetricTree(t.root)) {
-        cout << "The trees are the same." << endl;
+        cout << "The trees is symmetric." << endl;
     } else {
-        cout << "The trees are not the same." << endl;
+        cout << "The trees is not symmetric." << endl;
     }
 
 }
