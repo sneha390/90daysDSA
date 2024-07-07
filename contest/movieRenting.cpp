@@ -109,8 +109,7 @@ int main() {
         cout << shop << " ";
     }
     cout << endl;
-
-    // Report rented movies again
+     // Report rented movies again
     cout << "Report rented movies: ";
     reportResult = mrs.report();
     for (auto &item : reportResult) {
