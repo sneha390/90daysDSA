@@ -1,4 +1,4 @@
-package pattern;
+#Sum is even or odd
 
 public class traingle {
     public static void main(String[] args) {
